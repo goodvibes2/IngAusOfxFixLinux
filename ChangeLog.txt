@@ -1,5 +1,10 @@
 IngAusOfxFix
 
+V# 2.01 07 Mar 2020 Chris Good
+
+    * Replace bad tag <BR/> in <MEMO> with a space as causes empty transaction
+      Description in GnuCash.
+
 V# 2.00 28 Jul 2019 Chris Good
 
     * Convert to Modular Java 11 project.

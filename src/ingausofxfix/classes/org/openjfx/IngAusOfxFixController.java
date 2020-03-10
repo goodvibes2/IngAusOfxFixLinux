@@ -74,7 +74,7 @@ import javafx.util.Callback;
  */
 
 //public class IngAusOfxFixController {
-
+    
 public class IngAusOfxFixController  implements Initializable{
         /* class variables (static) */
 
@@ -471,7 +471,7 @@ public class IngAusOfxFixController  implements Initializable{
             taLog.appendText("Please enter OFX Directory\n");
             return false;
         }
-
+        
         if (! Files.isWritable(Paths.get(txtOfxDir.getText()))) {
             taLog.appendText("Error: OFX directory " + txtOfxDir.getText()
                     + " is not writable or does not exist\n");
@@ -822,7 +822,7 @@ public class IngAusOfxFixController  implements Initializable{
         <BANKTRANLIST>
         <STMTTRN>                                   Start of 1st Transaction
         <TRNTYPE>CREDIT
-//////////        <DTPOSTED>20160630000000
+        <DTPOSTED>20160630000000
         <TRNAMT>5.23
         <FITID>903889                                       MUST BE UNIQUE
         <MEMO>Bonus Interest Credit - Receipt 903889
@@ -952,6 +952,8 @@ public class IngAusOfxFixController  implements Initializable{
                                         if (!boolTrnDateInRange) {
                                             continue;
                                         }
+                                        // Change bad tag <BR/> to a space
+                                        line = line.replaceAll("<BR/>", " ");
                                     } else {
                                         if (line.startsWith("</STMTTRN>")) {
                                             boolInTransaction = false;
@@ -1072,6 +1074,18 @@ public class IngAusOfxFixController  implements Initializable{
         }
     }
 
+
+    
+    
+    
+//  public void initialize() {
+//      String javaVersion = System.getProperty("java.version");
+//      String javafxVersion = System.getProperty("javafx.version");
+//      label.setText("Hello, JavaFX " + javafxVersion + "\nRunning on Java " + javaVersion + ".");
+//  }
+    
+    
+    
 //  @Override
     public void initialize(URL location, ResourceBundle resources) {
 //        throw new UnsupportedOperationException("Not supported yet.");
@@ -1254,4 +1268,7 @@ public class IngAusOfxFixController  implements Initializable{
             enable_or_disable_buttons();
         }
     }
+    
+    
+    
 }
