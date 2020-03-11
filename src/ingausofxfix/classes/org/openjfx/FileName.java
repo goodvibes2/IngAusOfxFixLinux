@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 Chris Good
+ * Copyright (C) 2020 Chris Good
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,7 +13,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 
 package org.openjfx;
 
@@ -22,7 +22,7 @@ package org.openjfx;
  *      path
  *      filename (without extension)
  *      extension
- *
+ * 
  * 16/05/2016 filename() : Return file name if no extensionSeparator to fix
  *              index out of bounds.
  *
